@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
-import { Outlet, useLocation, useParams } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import { MotionConfig } from 'motion/react';
 import { I18nProvider, useI18n } from '@/i18n';
 import { isLocale } from '@/lib/paths';
-import { DEFAULT_LOCALE } from '@/lib/types';
+import { DEFAULT_LOCALE, type Locale } from '@/lib/types';
 import { Header } from './Header';
 import { Footer } from './Footer';
 import { FloatingActions, WhatsAppContextProvider } from './FloatingActions';
@@ -42,14 +42,12 @@ function Shell({ invalid }: { invalid: boolean }) {
   );
 }
 
-/** Wraps every /:lang/* page: validates the locale and provides translations. */
-export default function SiteLayout() {
-  const { lang } = useParams();
-  const valid = isLocale(lang);
+/** Wraps every /az|ru|en/* page (and the catch-all 404) and provides translations. */
+export default function SiteLayout({ lang, invalid = false }: { lang?: Locale; invalid?: boolean }) {
   return (
     <MotionConfig reducedMotion="user">
-      <I18nProvider lang={valid ? lang : DEFAULT_LOCALE}>
-        <Shell invalid={!valid} />
+      <I18nProvider lang={lang && isLocale(lang) ? lang : DEFAULT_LOCALE}>
+        <Shell invalid={invalid} />
       </I18nProvider>
     </MotionConfig>
   );
