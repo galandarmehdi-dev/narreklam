@@ -27,7 +27,7 @@ const optL = (rows: Row[] | undefined, field: string): Partial<L> | undefined =>
 
 export const CATEGORY_SELECT = '*, service_category_translations(*)';
 export const SERVICE_SELECT = '*, service_translations(*), service_items(*, service_item_translations(*))';
-export const PROJECT_SELECT = '*, portfolio_translations(*), portfolio_images(*), project_services(service_id)';
+export const PROJECT_SELECT = '*, portfolio_translations(*), portfolio_images!portfolio_images_project_id_fkey(*), project_services(service_id)';
 
 export function mapCategory(r: Row): Category {
   const tr = r.service_category_translations as Row[];
