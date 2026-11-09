@@ -1,0 +1,178 @@
+import { l, type CategoryDef } from './helpers';
+
+export const design: CategoryDef = {
+  slug: 'design-creative',
+  icon: 'PenTool',
+  art: 'design',
+  name: l('Dizayn və Kreativ', 'Дизайн и креатив', 'Design & Creative'),
+  tagline: l('Brendinizin vizual dili', 'Визуальный язык вашего бренда', 'The visual language of your brand'),
+  description: l(
+    'Loqo və korporativ üslubdan interfeys, 3D vizualizasiya və reklam kampaniyalarına qədər — brendinizi tanınan edən vizual həllər.',
+    'От логотипа и фирменного стиля до интерфейсов, 3D-визуализации и рекламных кампаний — визуальные решения, которые делают бренд узнаваемым.',
+    'From logos and brand identity to interfaces, 3D visualisation and campaigns — visual solutions that make your brand recognisable.',
+  ),
+  services: [
+    {
+      slug: 'graphic-design',
+      icon: 'PenTool',
+      quoteFields: ['quantity', 'dimensions'],
+      title: l('Qrafik dizayn', 'Графический дизайн', 'Graphic Design'),
+      short: l('Loqo, korporativ üslub, çap və sosial media dizaynı.', 'Логотипы, фирменный стиль, дизайн для печати и соцсетей.', 'Logos, identity, print and social media design.'),
+      headline: l('Brendinizi bir baxışda tanıdan dizayn.', 'Дизайн, по которому ваш бренд узнают с первого взгляда.', 'Design that makes your brand recognisable at a glance.'),
+      intro: l(
+        'Loqodan menyuya, vizitkartdan reklam kampaniyasına qədər bütün vizual materialları vahid üslubda hazırlayırıq. Dizayn faylları çapa və rəqəmsal istifadəyə hazır formatda təhvil verilir.',
+        'Разрабатываем все визуальные материалы в едином стиле — от логотипа и меню до визиток и рекламных кампаний. Макеты передаются в форматах, готовых к печати и цифровому использованию.',
+        'We create every visual asset in one consistent style — from logos and menus to business cards and campaigns. Files are delivered ready for print and digital use.',
+      ),
+      items: [
+        ['Loqo dizaynı', 'Дизайн логотипа', 'Logo design'],
+        ['Korporativ vizual üslub', 'Фирменный стиль', 'Corporate visual identity'],
+        ['Brend bələdçisi (brandbook)', 'Брендбук', 'Brand guidelines'],
+        ['Vizitkart dizaynı', 'Дизайн визиток', 'Business card design'],
+        ['Poster dizaynı', 'Дизайн постеров', 'Poster design'],
+        ['Flayer dizaynı', 'Дизайн флаеров', 'Flyer design'],
+        ['Broşür dizaynı', 'Дизайн брошюр', 'Brochure design'],
+        ['Kataloq dizaynı', 'Дизайн каталогов', 'Catalog design'],
+        ['Qablaşdırma dizaynı', 'Дизайн упаковки', 'Packaging design'],
+        ['Etiket dizaynı', 'Дизайн этикеток', 'Label design'],
+        ['Menyu dizaynı', 'Дизайн меню', 'Menu design'],
+        ['Reklam kampaniyası vizualları', 'Визуалы рекламных кампаний', 'Advertising campaign visuals'],
+        ['Təqdimat dizaynı', 'Дизайн презентаций', 'Presentation design'],
+        ['Sosial media post dizaynı', 'Дизайн постов для соцсетей', 'Social media post design'],
+      ],
+      applications: [
+        ['Yeni açılan kafe üçün loqo, menyu və vitrin dizaynı', 'Логотип, меню и оформление витрины для нового кафе', 'Logo, menu and window design for a new café'],
+        ['Şirkət üçün vizitkart, blank və təqdimat şablonları', 'Визитки, бланки и шаблоны презентаций для компании', 'Business cards, letterheads and presentation templates for a company'],
+        ['Məhsul xətti üçün qablaşdırma və etiketlər', 'Упаковка и этикетки для продуктовой линейки', 'Packaging and labels for a product line'],
+        ['Tədbir üçün poster, flayer və sosial media vizualları', 'Постеры, флаеры и визуалы для соцсетей к мероприятию', 'Posters, flyers and social visuals for an event'],
+      ],
+      faq: [
+        {
+          q: l('Dizayn faylları hansı formatda təhvil verilir?', 'В каких форматах передаются макеты?', 'In which formats are design files delivered?'),
+          a: l('Adətən çap üçün vektor PDF/AI/EPS və rəqəmsal istifadə üçün PNG/JPG/SVG formatlarında. Lazımi formatları layihənin əvvəlində razılaşdırırıq.', 'Обычно — векторные PDF/AI/EPS для печати и PNG/JPG/SVG для цифрового использования. Нужные форматы согласовываем в начале проекта.', 'Usually vector PDF/AI/EPS for print and PNG/JPG/SVG for digital use. We agree the required formats at the start.'),
+        },
+        {
+          q: l('Dizaynı sonra çap da etdirə bilərəm?', 'Можно ли потом заказать печать по этому дизайну?', 'Can you also print the design?'),
+          a: l('Bəli. Dizayn və çap bir komandada olduğu üçün maket birbaşa istehsalata hazır şəkildə hazırlanır.', 'Да. Дизайн и печать — в одной команде, поэтому макет сразу готовится с учётом производства.', 'Yes. Because design and print are in one team, artwork is prepared ready for production from the start.'),
+        },
+      ],
+      keywords: l('loqo, logo, brend, korporativ stil, firma stili, vizitka, vizit kart, flayer, buklet, menyu, qablaşdırma, etiket, dizayner', 'логотип, лого, фирменный стиль, брендбук, визитка, флаер, буклет, меню, упаковка, этикетка, дизайнер', 'logo, brand identity, branding, business card, flyer, leaflet, menu, packaging, label, designer'),
+    },
+    {
+      slug: 'ui-ux-design',
+      icon: 'MonitorSmartphone',
+      quoteFields: ['platform'],
+      title: l('UI/UX dizayn', 'UI/UX-дизайн', 'UI/UX Design'),
+      short: l('Veb sayt və mobil tətbiq interfeysləri, prototiplər.', 'Интерфейсы сайтов и мобильных приложений, прототипы.', 'Website and mobile app interfaces, prototypes.'),
+      headline: l('Rahat istifadə olunan və brendə uyğun interfeyslər.', 'Удобные интерфейсы в стиле вашего бренда.', 'Interfaces that are easy to use and true to your brand.'),
+      intro: l(
+        'İstifadəçinin yolunu planlaşdırır, wireframe və interaktiv prototiplər hazırlayır, sonra isə brendinizə uyğun vizual interfeys dizayn edirik. Hazır dizayn faylları proqramçılara təhvil verilməyə hazır olur.',
+        'Продумываем путь пользователя, готовим wireframe и интерактивные прототипы, а затем — визуальный интерфейс в стиле бренда. Готовые макеты удобно передавать разработчикам.',
+        'We map the user journey, build wireframes and interactive prototypes, then design a visual interface that fits your brand. Final files are ready to hand over to developers.',
+      ),
+      items: [
+        ['Veb sayt interfeys dizaynı', 'Дизайн интерфейса сайта', 'Website interface design'],
+        ['Mobil tətbiq interfeys dizaynı', 'Дизайн интерфейса мобильного приложения', 'Mobile application interface design'],
+        ['Landing page dizaynı', 'Дизайн лендинга', 'Landing page design'],
+        ['İstifadəçi təcrübəsi (UX) dizaynı', 'UX-дизайн', 'User experience design'],
+        ['Wireframe-lər', 'Wireframe', 'Wireframes'],
+        ['İnteraktiv prototiplər', 'Интерактивные прототипы', 'Interactive prototypes'],
+        ['İnterfeysin yenilənməsi (redizayn)', 'Редизайн интерфейса', 'Interface redesign'],
+      ],
+      applications: [
+        ['Xidmət şirkəti üçün korporativ sayt dizaynı', 'Дизайн корпоративного сайта для сервисной компании', 'Corporate website design for a service company'],
+        ['Kampaniya üçün tək səhifəlik landing', 'Одностраничный лендинг для рекламной кампании', 'Single-page landing for a campaign'],
+        ['Mövcud saytın müasir redizaynı', 'Современный редизайн существующего сайта', 'Modern redesign of an existing site'],
+        ['Mobil tətbiq ideyası üçün klikləmə prototipi', 'Кликабельный прототип для идеи мобильного приложения', 'Clickable prototype for a mobile app idea'],
+      ],
+      faq: [
+        {
+          q: l('Saytın proqramlaşdırılmasını da edirsiniz?', 'Вы также занимаетесь программированием сайта?', 'Do you also build the website?'),
+          a: l('Bu xidmət interfeys və istifadəçi təcrübəsi dizaynını əhatə edir. Proqramlaşdırma ehtiyacınızı konsultasiya zamanı ayrıca müzakirə edirik.', 'Эта услуга охватывает дизайн интерфейса и пользовательского опыта. Потребность в разработке обсуждаем отдельно на консультации.', 'This service covers interface and user experience design. Development needs are discussed separately during consultation.'),
+        },
+        {
+          q: l('Prototipi nə üçün etməliyik?', 'Зачем нужен прототип?', 'Why build a prototype?'),
+          a: l('Prototip strukturu və istifadə rahatlığını vizual dizayndan əvvəl yoxlamağa imkan verir — dəyişikliklər daha ucuz və sürətli olur.', 'Прототип позволяет проверить структуру и удобство до визуального дизайна — изменения обходятся дешевле и быстрее.', 'A prototype lets you test structure and usability before visual design, making changes faster and cheaper.'),
+        },
+      ],
+      keywords: l('ui, ux, sayt dizaynı, veb dizayn, web dizayn, interfeys, landing, prototip, figma, mobil tətbiq', 'ui, ux, дизайн сайта, веб-дизайн, интерфейс, лендинг, прототип, figma, мобильное приложение', 'ui, ux, web design, website design, interface, landing page, prototype, figma, mobile app'),
+    },
+    {
+      slug: '3d-visualization',
+      icon: 'Box',
+      quoteFields: ['dimensions'],
+      title: l('3D dizayn və vizualizasiya', '3D-дизайн и визуализация', '3D Design & Visualization'),
+      short: l('3D modelləşdirmə, məhsul və reklam konstruksiyası vizualları.', '3D-моделирование, визуализация продуктов и рекламных конструкций.', '3D modelling, product and signage visualisation.'),
+      headline: l('Nəticəni istehsalatdan əvvəl görün.', 'Увидьте результат ещё до производства.', 'See the result before production begins.'),
+      intro: l(
+        '3D vizualizasiya lövhənin fasadda, stendin sərgidə və ya interyerin hazır halda necə görünəcəyini əvvəlcədən göstərir. Bu, qərar qəbulunu asanlaşdırır və istehsalatda səhv riskini azaldır.',
+        '3D-визуализация заранее показывает, как вывеска будет смотреться на фасаде, стенд — на выставке, а интерьер — в готовом виде. Это упрощает решения и снижает риск ошибок в производстве.',
+        '3D visualisation shows in advance how a sign will look on a façade, a stand at an exhibition or an interior when complete — making decisions easier and reducing production risk.',
+      ),
+      items: [
+        ['3D modelləşdirmə', '3D-моделирование', '3D modeling'],
+        ['Məhsul vizualizasiyası', 'Визуализация продукта', 'Product visualization'],
+        ['Reklam konstruksiyası vizualizasiyası', 'Визуализация рекламных конструкций', 'Advertising structure visualization'],
+        ['3D lövhə konseptləri', 'Концепции объёмных вывесок', '3D signage concepts'],
+        ['İnteryer vizualizasiyası', 'Визуализация интерьера', 'Interior visualization'],
+        ['Eksteryer vizualizasiyası', 'Визуализация экстерьера', 'Exterior visualization'],
+        ['Sərgi stendi konseptləri', 'Концепции выставочных стендов', 'Exhibition stand concepts'],
+        ['Fotorealistik render', 'Фотореалистичный рендер', 'Photorealistic rendering'],
+      ],
+      applications: [
+        ['Mağaza fasadında lövhənin real ölçüdə görünüşü', 'Вид вывески на фасаде магазина в реальном масштабе', 'A shop sign shown on the façade at real scale'],
+        ['Sərgi stendinin bütün tərəflərdən görünüşü', 'Выставочный стенд со всех ракурсов', 'An exhibition stand from every angle'],
+        ['Kataloq və sayt üçün məhsul renderləri', 'Рендеры продукта для каталога и сайта', 'Product renders for catalogues and websites'],
+        ['Brendlənmiş ofis interyerinin konsepti', 'Концепция брендированного офисного интерьера', 'Concept for a branded office interior'],
+      ],
+      faq: [
+        {
+          q: l('Vizualizasiya üçün nə lazımdır?', 'Что нужно для визуализации?', 'What do you need for a visualisation?'),
+          a: l('Məkanın foto və ölçüləri, loqo və istəkləriniz kifayətdir. Texniki çertyoj varsa, nəticə daha dəqiq olur.', 'Достаточно фото и размеров места, логотипа и пожеланий. Если есть чертежи — результат будет точнее.', 'Photos and dimensions of the space, your logo and preferences are enough. Technical drawings make the result more precise.'),
+        },
+        {
+          q: l('3D vizualı istehsalat üçün istifadə etmək olar?', 'Можно ли использовать 3D-визуал для производства?', 'Can the 3D visual be used for production?'),
+          a: l('Vizualizasiya təsdiqdən sonra istehsalat çertyojlarının hazırlanması üçün əsas olur.', 'После утверждения визуализация становится основой для производственных чертежей.', 'Once approved, the visualisation becomes the basis for production drawings.'),
+        },
+      ],
+      keywords: l('3d, 3d dizayn, render, vizualizasiya, modelləşdirmə, 3d model, maket', '3d, 3д, рендер, визуализация, моделирование, 3d модель', '3d, render, rendering, visualisation, visualization, modelling, cgi'),
+    },
+    {
+      slug: 'branding',
+      icon: 'Sparkles',
+      quoteFields: [],
+      title: l('Brendinq və kreativ konseptlər', 'Брендинг и креативные концепции', 'Branding & Creative Concepts'),
+      short: l('Vizual kimlik, brend sistemləri və kampaniya konseptləri.', 'Визуальная айдентика, бренд-системы и концепции кампаний.', 'Visual identity, brand systems and campaign concepts.'),
+      headline: l('Tanınan brend ardıcıllıqla qurulur.', 'Узнаваемый бренд строится последовательно.', 'A recognisable brand is built consistently.'),
+      intro: l(
+        'Brendin vizual kimliyini sistem kimi qururuq: loqo, rənglər, şriftlər, qrafik elementlər və onların lövhədən geyimə qədər bütün daşıyıcılarda tətbiqi. Kampaniya konseptləri isə bu sistemi konkret mesajlara çevirir.',
+        'Выстраиваем визуальную идентичность бренда как систему: логотип, цвета, шрифты, графические элементы и их применение на всех носителях — от вывески до одежды. Концепции кампаний превращают эту систему в конкретные сообщения.',
+        'We build your visual identity as a system: logo, colours, typefaces, graphic elements and their use on every touchpoint, from signage to apparel. Campaign concepts turn that system into specific messages.',
+      ),
+      items: [
+        ['Vizual kimliyin hazırlanması', 'Разработка визуальной идентичности', 'Visual identity development'],
+        ['Brend kimlik sistemləri', 'Системы бренд-идентичности', 'Brand identity systems'],
+        ['Kampaniya konseptləri', 'Концепции кампаний', 'Campaign concepts'],
+        ['Reklam dizaynı', 'Рекламный дизайн', 'Advertising design'],
+        ['Korporativ brend tətbiqləri', 'Корпоративные бренд-носители', 'Corporate brand applications'],
+      ],
+      applications: [
+        ['Yeni biznes üçün tam brend paketi', 'Полный бренд-пакет для нового бизнеса', 'A complete brand package for a new business'],
+        ['Mövcud brendin yenilənməsi (rebrendinq)', 'Обновление существующего бренда (ребрендинг)', 'Refreshing an existing brand (rebranding)'],
+        ['Mövsümi reklam kampaniyasının konsepti', 'Концепция сезонной рекламной кампании', 'Concept for a seasonal advertising campaign'],
+        ['Brendin ofis, geyim və avtomobillərdə tətbiqi', 'Применение бренда в офисе, на одежде и автомобилях', 'Applying the brand to offices, apparel and vehicles'],
+      ],
+      faq: [
+        {
+          q: l('Brendinq ilə qrafik dizayn arasında fərq nədir?', 'Чем брендинг отличается от графического дизайна?', 'How is branding different from graphic design?'),
+          a: l('Qrafik dizayn konkret materialları yaradır, brendinq isə onların hamısının tabe olduğu vahid sistemi və qaydaları müəyyən edir.', 'Графический дизайн создаёт конкретные материалы, а брендинг задаёт единую систему и правила, которым они подчиняются.', 'Graphic design creates specific materials; branding defines the single system and rules they all follow.'),
+        },
+        {
+          q: l('Brendi istehsalatda da tətbiq edirsiniz?', 'Вы применяете бренд и в производстве?', 'Do you also apply the brand in production?'),
+          a: l('Bəli — lövhələr, interyer reklamı, geyim, avtomobil və promo məhsullar üzərində tətbiqi bir yerdə həyata keçirə bilərik.', 'Да — можем реализовать применение на вывесках, в интерьере, на одежде, автомобилях и промо-продукции.', 'Yes — we can roll it out on signage, interiors, apparel, vehicles and promotional products in one place.'),
+        },
+      ],
+      keywords: l('brendinq, brending, rebrendinq, vizual kimlik, korporativ üslub, kampaniya, reklam konsepti', 'брендинг, ребрендинг, айдентика, фирменный стиль, концепция кампании', 'branding, rebranding, identity, brand identity, campaign concept, creative concept'),
+    },
+  ],
+};

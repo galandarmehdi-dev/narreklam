@@ -1,0 +1,79 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  # Nightly rebuild so prerendered (SEO) pages pick up services/projects edited in the admin dashboard.
+  schedule:
+    - cron: '0 1 * * *'
+  # Optional: trigger from elsewhere with `gh api repos/:owner/:repo/dispatches -f event_type=content-updated`
+  repository_dispatch:
+    types: [content-updated]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Resolve site URL and base path
+        id: site
+        env:
+          CUSTOM_DOMAIN: ${{ vars.CUSTOM_DOMAIN }}
+          REPO: ${{ github.event.repository.name }}
+          OWNER: ${{ github.repository_owner }}
+        run: |
+          if [ -n "$CUSTOM_DOMAIN" ]; then
+            echo "base=/" >> "$GITHUB_OUTPUT"
+            echo "url=https://$CUSTOM_DOMAIN" >> "$GITHUB_OUTPUT"
+          elif [ "$REPO" = "$OWNER.github.io" ]; then
+            echo "base=/" >> "$GITHUB_OUTPUT"
+            echo "url=https://$OWNER.github.io" >> "$GITHUB_OUTPUT"
+          else
+            echo "base=/$REPO/" >> "$GITHUB_OUTPUT"
+            echo "url=https://$OWNER.github.io/$REPO" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Build (typecheck + Vite + prerender)
+        env:
+          VITE_SUPABASE_URL: ${{ vars.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ vars.VITE_SUPABASE_ANON_KEY }}
+          VITE_BASE_PATH: ${{ steps.site.outputs.base }}
+          VITE_SITE_URL: ${{ steps.site.outputs.url }}
+          VITE_SHOW_DEMO: 'false'
+        run: npm run build
+
+      - name: Custom domain (CNAME)
+        if: ${{ vars.CUSTOM_DOMAIN != '' }}
+        run: echo "${{ vars.CUSTOM_DOMAIN }}" > dist/CNAME
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

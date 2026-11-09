@@ -1,0 +1,11 @@
+# Minimal Supabase CLI config for this project. Run `supabase link --project-ref <ref>` first.
+project_id = "narreklam"
+
+[auth]
+# Public self-registration is disabled: admins are invited from the Supabase dashboard.
+enable_signup = false
+
+[functions.quote-submit]
+# The function performs its own validation/authorization; it must accept the public
+# anon/publishable key from the browser (which is not always a JWT).
+verify_jwt = false
