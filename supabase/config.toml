@@ -2,6 +2,9 @@
 project_id = "narreklam"
 
 [auth]
+# Where password-reset/invite links send the user (the admin page on the custom domain).
+site_url = "https://narreklam.az/admin/"
+additional_redirect_urls = ["https://narreklam.az/admin/", "https://www.narreklam.az/admin/", "https://galandarmehdi-dev.github.io/narreklam/admin/"]
 # Public self-registration is disabled: admins are invited from the Supabase dashboard.
 enable_signup = false
 
